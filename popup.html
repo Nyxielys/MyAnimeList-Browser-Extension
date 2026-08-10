@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MAL Dashboard</title>
+    <link rel="stylesheet" href="css/popup.css">
+</head>
+
+<body>
+    <div id="view-notif" class="notif" style="display: none;">
+        <button id="notif-view-page-anime-btn" data-goto="view-anime">Information about the anime on this page</button>
+    </div>
+
+    <div id="view-extension-introduction" class="view" style="display: none;">
+        <h2>Extension configuration</h2>
+        <div id="step" class="step-1" style="display: none;">
+            <button id="open-link" class="goto-step2" data-url="https://myanimelist.net/apiconfig">First: Go
+                here</button>
+        </div>
+        <div id="step" class="step-2" style="display: none;">
+            <h3
+                style="display: flex;justify-content: center;align-items: center;font-size: large;margin-top: -5px;margin-bottom: -5px;">
+                Press "Create ID"</h3>
+            <p><b>App Name:</b> Choose what you would like.</p>
+            <p><b>App Type:</b> web</p>
+            <p><b>App Description:</b> Choose what you would like.</p>
+            <div id="step-info" style="display: flex;align-items: center;flex-direction: row;gap: 3%;">
+                <p style="width: auto;height: 30px;line-height: 30px;"><b>App Redirect URL:</b></p>
+                <textarea wrap="off" name="mal-redirecturi" id="mal-redirecturi" disabled
+                    style="line-height: 30px;">https://ongamdeehfnghjpbofhhipcebdbknmkh.chromiumapp.org/callback</textarea>
+                <button id="copy_redirecturi">Copy</button>
+            </div>
+            <p><b>Homepage URL:</b> Since you aren't actually creating a website, you can enter any URL you like, or the
+                GitHub URL.</p>
+            <p><b>Commercial / Non-Commercial:</b> Non-Commercial</p>
+            <p><b>Name / Company Name:</b> Choose what you would like.</p>
+            <p><b>Purpose of Use:</b> hobbyist or other</p>
+            <button id="goto-step3" class="go_next_step">Next</button>
+        </div>
+        <div id="step" class="step-3" style="display: none;">
+            <p>Once your ID has been created, go to "Edit" to obtain your client_id and client_secret.</p>
+            <textarea name="set_client_id" id="set_client_id" placeholder="Enter your Client ID"></textarea>
+            <textarea name="set_client_secret" id="set_client_secret" placeholder="Enter your Client Secret"></textarea>
+            <div id="valid-config-div"
+                style="width: 100%;height: 40px;display: flex;align-items: center;justify-content: center;flex-direction: column;">
+                <button id="valid-configuration">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="view-login" class="view" style="display: none;">
+        <div id="navigator-bar">
+            <button id="nav-bar-logout" data-goto="view-logout"><b>Settings</b></button>
+        </div>
+        <hr>
+        <h2>Login required</h2>
+        <b>Please link your MyAnimeList account.</b>
+        <button id="btn-login">Se connecter avec MAL</button>
+    </div>
+
+    <div id="view-home" class="view" style="display: none">
+        <div id="navigator-bar">
+            <button id="nav-bar" data-goto="view-anime-search"><b>Search</b></button>
+            <!-- <button id="nav-bar" data-goto="view-edit-anime-from-list"><b>Test</b></button> -->
+            <p></p>
+            <button id="nav-bar-logout" data-goto="view-logout"><b>Settings</b></button>
+        </div>
+        <hr>
+        <h2>Your anime list</h2>
+        <div id="your-anime-list-results"></div>
+        <div id="next-previous-buttons-anime-list"></div>
+    </div>
+
+    <div id="view-edit-anime-from-list" class="view" style="display: none;">
+        <div id="navigator-bar">
+            <button id="nav-bar" data-goto="view-home"><b>Go home</b></button>
+            <p></p>
+            <button id="nav-bar-logout" data-goto="view-logout"><b>Settings</b></button>
+        </div>
+        <hr>
+        <h2>Edit your anime list</h2>
+        <div id="anime-to-edit-result"></div>
+    </div>
+
+    <div id="view-anime" class="view" style="display: none">
+        <div id="navigator-bar">
+            <button id="nav-bar" data-goto="view-home"><b>Anime list</b></button>
+            <p></p>
+            <button id="nav-bar" data-goto="view-anime-search"><b>Search</b></button>
+            <p></p>
+            <button id="nav-bar-logout" data-goto="view-logout"><b>Settings</b></button>
+        </div>
+        <hr>
+        <h2>Anime on this page</h2>
+        <div id="this-page-results" style="width: 100%;display: flex;align-items: center;justify-content: center;">
+        </div>
+    </div>
+
+    <div id="view-logout" class="view" style="display: none">
+        <div id="navigator-bar" class="login-normal-nav-bar" style="display: none;">
+            <button id="nav-bar" data-goto="view-home"><b>Anime list</b></button>
+            <p></p>
+            <button id="nav-bar" data-goto="view-anime-search"><b>Search</b></button>
+        </div>
+        <div id="navigator-bar" class="login-not-connected-nav-bar">
+            <button id="nav-bar-login" data-goto="view-login"><b>Log in</b></button>
+        </div>
+        <hr>
+
+        <h2>Log out</h2>
+        <p>By clicking "Log out," you will be logged out of your MyAnimeList account. Please note that you will need to
+            log in again to use this extension in the future.</p>
+        <div id="logout-div-btn">
+            <button id="logout-btn"><b>Log out</b></button>
+        </div>
+        <hr>
+        <h2>Reset Client ID & Client Secret</h2>
+        <p>By doing so, you will need to reconfigure the extension by entering your new Client ID and Client Secret, and
+            this will also require you to log back into your MyAnimeList account.</p>
+        <div id="reset-all-div-btn">
+            <button id="reset-all-btn">Reset</button>
+        </div>
+    </div>
+
+    <div id="view-anime-search" class="view" style="display: none;">
+        <div id="navigator-bar">
+            <button id="nav-bar" data-goto="view-home"><b>Your anime list</b></button>
+            <p></p>
+            <button id="nav-bar-logout" data-goto="view-logout"><b>Settings</b></button>
+        </div>
+        <hr>
+        <h2>Anime search</h2>
+        <textarea wrap="off" name="searched-anime" id="searched-anime"
+            placeholder="Write the title of the anime here"></textarea>
+        <div id="search-btn-container">
+            <button id="search-anime-btn">Search</button>
+        </div>
+        <div id="anime-search-results" style="width: 100%;"></div>
+        <div id="next-previous-buttons"></div>
+    </div>
+
+    <hr>
+    <footer style="padding-top: 5px; padding-bottom: 5px; text-align: center;">All data provided by this extension is
+        obtained via the MyAnimeList API. This extension is neither linked to nor affiliated with MyAnimeList.</footer>
+
+    <script src="js/mal_module.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+
+</html>

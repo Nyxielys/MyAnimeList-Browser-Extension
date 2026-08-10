@@ -1,0 +1,965 @@
+::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111727;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #aaaaaa;
+}
+
+body {
+    max-height: 800px;
+    overflow-y: auto;
+    width: 350px;
+    background-color: #11192E;
+    color: white;
+    padding: 5px;
+    padding-bottom: 15px;
+}
+
+.view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 15px;
+    gap: 5px;
+    overflow-y: auto;
+}
+
+#view-notif {
+    width: 100%;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: -15px;
+}
+
+#view-notif #notif-view-page-anime-btn {
+    width: 85%;
+    height: 30px;
+    transition: 0.5s;
+
+    border: solid;
+    border-radius: 4px;
+    border-color: #293144;
+    border-width: 1px;
+
+    background-color: #111727;
+    color: white
+}
+
+#view-notif #notif-view-page-anime-btn:hover {
+    width: 100%;
+    height: 40px;
+
+    background-color: #0d111d;
+    font-size: large;
+}
+
+#searched-anime {
+    resize: none;
+    font-size: large;
+
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+
+    background-color: #111727;
+    color: white;
+
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+
+    white-space: nowrap;
+    text-overflow: clip;
+    direction: ltr;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#mal-redirecturi {
+    resize: none;
+
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+
+    background-color: #111727;
+    color: white;
+
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+    text-overflow: clip;
+    direction: ltr;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#copy_redirecturi {
+    background-color: white;
+    color: black;
+
+    width: auto;
+    height: 30px;
+
+    border: solid;
+    border-width: 1px;
+    border-color: #293144;
+    border-radius: 4px;
+}
+
+#copy_redirecturi:hover {
+    background-color: #aaaaaa;
+}
+
+.go_next_step {
+    height: 30px;
+    width: 90%;
+
+    border: solid;
+    border-width: 1px;
+    border-color: #293144;
+    border-radius: 4ps;
+
+    background-color: #111727;
+    color: white;
+}
+
+.go_next_step:hover {
+    background-color: #0d111d;
+}
+
+.step-1 {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.step-2 {
+    width: 95%;
+    padding-left: 5%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.step-3 {
+    width: 95%;
+    gap: 5px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-3 textarea {
+    resize: none;
+    font-size: large;
+
+    border: solid;
+    border-radius: 4px;
+    border-color: #293144;
+    border-width: 1px;
+
+    background-color: #111727;
+    color: white;
+
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+
+    white-space: nowrap;
+    text-overflow: clip;
+    overflow: hidden;
+    direction: ltr;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#valid-configuration {
+    width: 85%;
+    height: 30px;
+
+    border: solid;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #293144;
+
+    background-color: #111727;
+    color: white;
+    transition: 0.3s;
+}
+
+#valid-configuration:hover {
+    width: 90%;
+    height: 40px;
+    font-size: large;
+}
+
+.step-1 button {
+    border: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: #293144;
+
+    background-color: #111727;
+    width: 90%;
+    height: 30px;
+    color: white;
+    font-size: large;
+}
+
+.step-1 button:hover {
+    background-color: #0d111d;
+}
+
+#anime-to-edit-result {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* score */
+#anime-to-edit-result #score {
+    width: 90%;
+    height: auto;
+
+    gap: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#anime-to-edit-result #score #field-title {
+    height: 30px;
+    width: 35%;
+    font-size: large;
+    text-align: left;
+}
+
+#anime-to-edit-result #score #new-param {
+    height: 30px;
+    width: 60%;
+
+    border: solid;
+    border-radius: 4px;
+    border-color: #293144;
+    border-width: 1px;
+
+    background-color: #111727;
+    padding-right: 2%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#anime-to-edit-result #score #new-param p {
+    width: 10%;
+    font-size: large;
+    padding-left: 2px;
+}
+
+#anime-to-edit-result #score #new-param input {
+    resize: none;
+    font-size: large;
+
+    width: 80%;
+
+    border: none;
+
+    background-color: transparent;
+    color: white;
+
+
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    direction: ltr;
+}
+
+/* episodes watched */
+#anime-to-edit-result #num_ep_watched {
+    width: 90%;
+    height: auto;
+
+    gap: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#anime-to-edit-result #num_ep_watched #field-title {
+    height: 30px;
+    width: 60%;
+    font-size: large;
+    text-align: left;
+}
+
+#anime-to-edit-result #num_ep_watched #new-param {
+    height: 30px;
+    width: 35%;
+
+    border: solid;
+    border-radius: 4px;
+    border-color: #293144;
+    border-width: 1px;
+
+    background-color: #111727;
+    padding-right: 2%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#anime-to-edit-result #num_ep_watched #new-param input {
+    resize: none;
+    font-size: large;
+
+    width: 100%;
+
+    border: none;
+
+    background-color: transparent;
+    color: white;
+
+
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    direction: ltr;
+}
+
+/* anime status */
+#anime-to-edit-result #status {
+    width: 90%;
+    height: auto;
+
+    gap: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#anime-to-edit-result #status #field-title {
+    height: 30px;
+    width: 25%;
+    font-size: large;
+    text-align: left;
+}
+
+#anime-to-edit-result #status #new-param {
+    height: 30px;
+    width: 70%;
+
+    border: solid;
+    border-radius: 4px;
+    border-color: #293144;
+    border-width: 1px;
+
+    background-color: #111727;
+    padding-right: 2%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#anime-to-edit-result #status #new-param select {
+    resize: none;
+    font-size: large;
+
+    width: 100%;
+
+    border: none;
+
+    background-color: transparent;
+    color: white;
+
+
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    direction: ltr;
+}
+
+select option {
+    background-color: #111727;
+}
+
+/* save btn */
+#confirm-anime-list-editing {
+    height: 30px;
+    width: 90%;
+
+    border: solid;
+    border-color: #293144;
+    border-width: 1px;
+    border-radius: 4px;
+
+    background-color: #00ff70;
+    color: white;
+    transition: 0.3s;
+}
+
+#confirm-anime-list-editing:hover {
+    height: 40px;
+    width: 100%;
+
+    font-size: large;
+
+    background-color: #00ff50;
+}
+
+/* search */
+textarea,
+input,
+select {
+    outline: none;
+}
+
+#search-btn-container {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-anime-btn {
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+
+    background-color: #111727;
+    color: white;
+    transition: 0.3s;
+
+    height: 30px;
+    width: 80%;
+}
+
+#search-anime-btn:hover {
+    width: 85%;
+    height: 35px;
+    font-size: large;
+
+    background-color: #0d111d;
+}
+
+#anime-search-results {
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Navigator bar - HOME */
+#navigator-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 15px;
+    height: 40px;
+}
+
+/* Classic navigator separator */
+#view-home #navigator-bar p,
+#view-anime-search #navigator-bar p,
+#view-logout #navigator-bar p,
+#view-anime #navigator-bar p,
+#view-edit-anime-from-list #navigator-bar p {
+    width: 2%;
+}
+
+/* Classic */
+#view-home #navigator-bar #nav-bar,
+#view-anime-search #navigator-bar #nav-bar,
+#view-logout #navigator-bar #nav-bar,
+#view-edit-anime-from-list #navigator-bar #nav-bar {
+    width: 40%;
+    height: 30px;
+    background-color: #111727;
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+    color: white;
+    transition: 0.3s;
+}
+
+/* Classic hover */
+#view-home #navigator-bar #nav-bar:hover,
+#view-anime-search #navigator-bar #nav-bar:hover,
+#view-logout #navigator-bar #nav-bar:hover,
+#view-edit-anime-from-list #navigator-bar #nav-bar:hover {
+    width: 45%;
+    height: 40px;
+    background-color: #0d111d;
+    font-size: large;
+}
+
+/* 3 buttons bar */
+#view-anime #navigator-bar #nav-bar {
+    width: 30%;
+    height: 30px;
+    background-color: #111727;
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+    color: white;
+    transition: 0.3s;
+}
+
+#view-anime #navigator-bar #nav-bar:hover {
+    width: 35%;
+    height: 40px;
+    background-color: #0d111d;
+    font-size: large;
+}
+
+/* Classic log out */
+#view-home #navigator-bar #nav-bar-logout,
+#view-anime-search #navigator-bar #nav-bar-logout,
+#view-edit-anime-from-list #navigator-bar #nav-bar-logout {
+    width: 40%;
+    height: 30px;
+    background-color: #ff4040;
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+    color: white;
+    transition: 0.3s;
+}
+
+#view-login #navigator-bar #nav-bar-logout {
+    width: 80%;
+    height: 30px;
+    background-color: #ff4040;
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+    color: white;
+    transition: 0.3s;
+}
+
+#view-logout .login-not-connected-nav-bar #nav-bar-login {
+    width: 80%;
+    height: 30px;
+    background-color: #0088ff;
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+    color: white;
+    transition: 0.3s;
+}
+
+#view-home #navigator-bar #nav-bar-logout:hover,
+#view-anime-search #navigator-bar #nav-bar-logout:hover,
+#view-edit-anime-from-list #navigator-bar #nav-bar-logout:hover,
+#view-login #navigator-bar #nav-bar-logout:hover {
+    width: 45%;
+    height: 40px;
+    background-color: #ff2121;
+    font-size: large;
+}
+
+#view-logout .login-not-connected-nav-bar #nav-bar-login:hover {
+    width: 90%;
+    height: 40px;
+    background-color: #0066cc;
+    font-size: large;
+}
+
+#view-login #navigator-bar #nav-bar-logout:hover {
+    width: 90%;
+    height: 40px;
+    background-color: #ff2121;
+    font-size: large;
+}
+
+/* 3 buttons log out */
+#view-anime #navigator-bar #nav-bar-logout {
+    width: 30%;
+    height: 30px;
+    background-color: #ff4040;
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+    color: white;
+    transition: 0.3s;
+}
+
+#view-anime #navigator-bar #nav-bar-logout:hover {
+    width: 35%;
+    height: 40px;
+    background-color: #ff2121;
+    font-size: large;
+}
+
+/* Log out #view-anime */
+#view-anime #navigator-bar #nav-bar-logout {
+    width: 30%;
+    height: 30px;
+    background-color: #ff4040;
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+    color: white;
+    transition: 0.3s;
+}
+
+#view-anime #navigator-bar #nav-bar-logout:hover {
+    width: 35%;
+    height: 40px;
+    background-color: #ff2121;
+    font-size: large;
+}
+
+h2 {
+    border: solid;
+    border-color: #293144;
+    background-color: #111727;
+    border-width: 1px;
+    border-radius: 4px;
+    width: 90%;
+    text-align: center;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#btn-login {
+    border-style: solid;
+    border-color: #293144;
+    border-width: 1px;
+    background-color: #0088ff;
+    color: #fff;
+    width: 80%;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+#btn-login:hover {
+    background-color: #0066cc;
+    border-color: #0066cc;
+}
+
+.anime-card,
+.anime-card-noanim {
+    border: solid;
+    border-radius: 4px;
+    border-color: #293144;
+    border-width: 1px;
+
+    background-color: #111727;
+
+    width: 90%;
+    display: flex;
+
+    padding-left: 15px;
+    transition: 0.3s;
+}
+
+#next-previous-buttons,
+#next-previous-buttons-anime-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    gap: 5%;
+}
+
+#only-next-searched-anime-btn,
+#only-previous-searched-anime-btn,
+#only-previous-anime-list-btn,
+#only-next-anime-list-btn {
+    width: 80%;
+    height: 30px;
+    background-color: #111727;
+    color: white;
+    transition: 0.3s;
+
+    border: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: #293144;
+}
+
+#only-next-searched-anime-btn:hover,
+#only-previous-searched-anime-btn:hover,
+#only-previous-anime-list-btn:hover,
+#only-next-anime-list-btn:hover {
+    width: 85%;
+    height: 40px;
+    background-color: #0d111d;
+    font-size: large;
+}
+
+#previous-searched-anime-btn,
+#next-searched-anime-btn,
+#previous-anime-list-btn,
+#next-anime-list-btn {
+    width: 40%;
+    height: 30px;
+    background-color: #111727;
+    color: white;
+    transition: 0.3s;
+
+    border: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: #293144;
+}
+
+#previous-searched-anime-btn:hover,
+#next-searched-anime-btn:hover,
+#previous-anime-list-btn:hover,
+#next-anime-list-btn:hover {
+    width: 45%;
+    height: 40px;
+    background-color: #0d111d;
+    font-size: large;
+}
+
+.anime-card:hover {
+    width: 95%;
+}
+
+.anime-card-infos {
+    flex: 1;
+    padding-bottom: 15px;
+}
+
+.anime-card-infos h3 {
+    min-height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    flex-direction: column;
+}
+
+.anime-card-infos #anime-card-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5%;
+    margin-bottom: 5px;
+}
+
+.anime-card-infos #anime-card-buttons #open-anime-link {
+    width: 70%;
+}
+
+.anime-card-infos #anime-card-buttons #edit-anime-list {
+    width: 25%;
+}
+
+.anime-card-infos #anime-card-buttons button {
+    height: 30px;
+    color: white;
+    border: solid;
+    border-color: #293144;
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: #111727;
+}
+
+.anime-card-infos #anime-card-buttons button:hover {
+    background-color: #0d111d;
+}
+
+#anime-card-dlt-btn,
+#anime-card-addwatchlist-btn {
+    height: 40px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#anime-card-dlt-btn button {
+    width: 90%;
+    height: 30px;
+
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+
+    background-color: #ff4040;
+    color: white;
+    transition: 0.3s;
+}
+
+#anime-card-dlt-btn button:hover {
+    width: 100%;
+    height: 40px;
+
+    font-size: large;
+    background-color: #ff2121;
+}
+
+#anime-card-addwatchlist-btn button {
+    width: 70%;
+    height: 30px;
+
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+
+    background-color: #00ff60;
+    color: white;
+    transition: 0.3s;
+}
+
+#anime-card-addwatchlist-btn button:hover {
+    width: 80%;
+    height: 40px;
+
+    font-size: large;
+    background-color: #00ff70;
+}
+
+.anime-card-img img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+footer {
+    width: auto;
+    ;
+}
+
+.anime-info {
+    width: 100%;
+}
+
+#view-logout p {
+    width: 90%;
+    text-align: center;
+}
+
+#view-logout #logout-div-btn,
+#view-logout #reset-all-div-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+}
+
+#view-logout #logout-div-btn button,
+#view-logout #reset-all-div-btn button {
+    width: 80%;
+    height: 30px;
+    background-color: #ff4040;
+    border: solid;
+    border-color: #293144;
+    border-radius: 4px;
+    border-width: 1px;
+    color: white;
+    transition: 0.3s;
+}
+
+#view-logout #logout-div-btn button:hover,
+#view-logout #reset-all-div-btn button:hover {
+    width: 90%;
+    height: 40px;
+    font-size: large;
+    background-color: #ff2121;
+}
+
+#your-anime-list-results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+hr {
+    width: 90%;
+}

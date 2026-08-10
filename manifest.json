@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "MAL Dashboard",
+  "version": "1.0.0",
+  "description": "This extension allows for quick and easy use of your MyAnimeList anime list; features include a search bar, anime detection while browsing Crunchyroll, the ability to add anime directly from the Crunchyroll page or via the search tool, and the option to edit entries in your list.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyaGER/QMx8tLI9rIvPc6e0W0ky5gL7Nvl1UqL3A0ygXw1hyFEvsh5AKVkTaEpcETLGtfUjWhdg7NR3vH+x7We1DXJJ+VT/RDSjOEmdJgiChcAPodSvt/PqTmd5PIr1Sd0LHSIooH8w4D6xLBdLWnrHvcoyChCEgwur/y/2VwoVquEu2XQEV18oA5rgiTvGo28sXmRNuv8/8edJbxmFJOMOD+gwl48ZhZdDur4UvKLjjPnDJuKBPVq8HebZL7ijLJfdlFu2jLO1r3KqCPwOYKTfo+rTIfZBiZWlfhS/y4dtXciKjqXieTRTEyseC+5bM8NSRKORQ6NuidwZkW1PgOyQIDAQAB",
+    
+  "permissions": [
+    "storage",
+    "identity",
+    "tabs"
+  ],
+  
+  "host_permissions": [
+    "https://*.myanimelist.net/*",
+    "https://*.crunchyroll.com/*"
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.crunchyroll.com/*"],
+      "js": ["js/content.js"]
+    }
+  ],
+
+  "background": {
+    "service_worker": "js/background.js"
+  }
+}
