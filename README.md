@@ -11,13 +11,13 @@ Available on Microsoft Edge and Google Chrome.
 Aside from a necessary change to manifest.json, other issues render this extension unusable on Firefox.
 
 #### Microsoft Edge
-- Go to the following link: edge://extensions
+- Go to the following link: `edge://extensions`
 - Enable "Developer mode" at the bottom left.
 - Select "Load unpacked extension"
 - Go to the folder containing the extension and click "Open".
 
 #### Google Chrome
-- Go to the following link: chrome://extensions
+- Go to the following link: `chrome://extensions`
 - Enable "Developer mode" at the top right.
 - Select "Load unpacked extension"
 - Go to the folder containing the extension and click "Open".
